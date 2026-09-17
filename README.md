@@ -10,7 +10,7 @@ Compares a **Custom CNN** (baseline) against **ResNet-50** and **EfficientNet-B3
 | Feature | Previous (Groupmate) | This Project |
 |---|---|---|
 | Dataset | Kaggle Nickparvar | **BRISC2025** (expert-annotated, multi-plane) |
-| Model | Custom CNN only | Custom CNN **+ ResNet-50 + EfficientNet-B3** |
+| Model | Custom CNN only | Custom CNN **+ ResNet-50 + EfficientNet-B3** + MobileNet |
 | Transfer Learning | ❌ None | ✅ 2-phase fine-tuning |
 | LR Scheduler | ❌ None | ✅ ReduceLROnPlateau |
 | Early Stopping | ❌ None | ✅ Patience-based |
