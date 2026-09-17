@@ -62,6 +62,9 @@ python train.py --model resnet50 --epochs 30
 
 # EfficientNet-B3
 python train.py --model efficientnet --epochs 30
+
+#MobilNet
+python train.py --model mobilenetv3    
 ```
 Checkpoints saved to `models/<name>_best.pth`
 
@@ -70,6 +73,7 @@ Checkpoints saved to `models/<name>_best.pth`
 python eval.py --model custom_cnn
 python eval.py --model resnet50
 python eval.py --model efficientnet
+python eval.py --model mobilenetv3    
 python compare.py        # generates comparison chart
 ```
 Outputs saved to `outputs/`
@@ -92,8 +96,8 @@ brain_tumor_brisc/
 ├── outputs/                ← confusion matrices, ROC curves, summary CSV
 ├── config.py               ← all hyperparameters & paths
 ├── data_loader.py          ← BRISC2025 data pipeline
-├── model.py                ← CustomCNN / ResNet50 / EfficientNet
-├── train.py                ← training script (supports all 3 models)
+├── model.py                ← CustomCNN / ResNet50 / EfficientNet / MobileNet
+├── train.py                ← training script (supports all 4 models)
 ├── eval.py                 ← evaluation: accuracy, F1, AUC-ROC
 ├── compare.py              ← side-by-side model comparison chart
 ├── gradcam.py              ← Grad-CAM (works with all models)
@@ -114,10 +118,4 @@ This prevents catastrophic forgetting and converges faster than training from sc
 
 ---
 
-## Expected Results
 
-| Model | Params | Expected Val Acc |
-|---|---|---|
-| Custom CNN | ~26M | ~88–91% |
-| ResNet-50 | ~25M | ~93–96% |
-| EfficientNet-B3 | ~12M | ~94–97% |
